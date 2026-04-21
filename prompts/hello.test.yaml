@@ -1,0 +1,9 @@
+cases:
+  - name: basic-greeting
+    variables:
+      name: "World"
+      app_context: "Welcome screen"
+  - name: named-greeting
+    variables:
+      name: "Alice"
+      app_context: "Settings page"
