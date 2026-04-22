@@ -31,6 +31,14 @@ export default async function Home() {
       },
     );
 
+    if ("returnMessage" in request) {
+      return {
+        model: "validation",
+        requestBodyPreview: "short-circuit",
+        summary: request.returnMessage,
+      };
+    }
+
     const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const completion = await client.chat.completions.create(
       request.body as unknown as ChatCompletionCreateParamsNonStreaming,

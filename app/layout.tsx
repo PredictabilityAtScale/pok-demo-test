@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PromptOpsKit Browser Demo",
-  description: "Client-side OpenAI SDK demo driven by a promptopskit prompt.",
+  description: "Server-side OpenAI SDK demo driven by a promptopskit prompt.",
 };
 
 export default function RootLayout({

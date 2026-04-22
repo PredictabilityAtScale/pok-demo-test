@@ -5,7 +5,16 @@
     "inputs": [
       {
         "name": "pull_request_body",
-        "max_size": 8000
+        "max_size": 8000,
+        "trim": "both",
+        "allow_regex": {
+          "pattern": "\\S"
+        },
+        "deny_regex": {
+          "pattern": "(secret|api[_-]?key|password)",
+          "flags": "i",
+          "return_message": "A secret was detected."
+        }
       }
     ]
   },
@@ -16,7 +25,8 @@
   },
   "sections": {
     "system_instructions": "You are a code review assistant. Summarize pull requests concisely and clearly.",
-    "prompt_template": "Summarize the following pull request:\n\n{{ pull_request_body }}"
+    "prompt_template": "Summarize the following pull request:\n\n{{ pull_request_body }}",
+    "notes": "This example demonstrates input hardening with byte trimming plus structured regular expressions, including an explicit case-insensitive flag for the denylist."
   },
   "source": {
     "file_path": "prompts\\summarizePullRequest.md"

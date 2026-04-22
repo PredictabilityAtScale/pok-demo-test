@@ -4,6 +4,18 @@ globs: "**"
 alwaysApply: true
 ---
 
+---
+description: How to create and manage prompts using promptopskit
+globs: "**"
+alwaysApply: true
+---
+
+---
+description: How to create and manage prompts using promptopskit
+globs: "**"
+alwaysApply: true
+---
+
 <!-- promptopskit:start -->
 # promptopskit
 

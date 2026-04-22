@@ -40,6 +40,10 @@ const developExample = `const request = await openaiAdapter.renderPrompt(
   },
 );
 
+if ("returnMessage" in request && request.returnMessage) {
+  return request.returnMessage;
+}
+
 const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const completion = await client.chat.completions.create(request.body);
 
